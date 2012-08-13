@@ -1,14 +1,14 @@
 var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWeight, _rowerHeight, _rowerNumber) {
-	var heightRow = 1024/_rowerNumber;
-	
-	var self = Ti.UI.createTableViewRow({
+	var heightRow = (964/7);
+	self = Ti.UI.createTableViewRow({
 		objName:'listRowers',
 		touchEnabled:'true',
+		height:heightRow,
 		hasDetail:'true',
 		moveable:'true',
 		left:0,
-		height:heightRow
 	});
+	Titanium.API.info('Height of a row '+self.height);
 	
 	var rowerImageNamesexView = Ti.UI.createView({
 		layout:'vertical',
@@ -78,7 +78,7 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 		font: {fontSize:20}
 	});
 	
-	var rowerWeight = Ti.UI.createLabel({codeathon
+	var rowerWeight = Ti.UI.createLabel({
 		text:'Weight: '+_rowerWeight,
 		font: {fontSize:20}
 	});

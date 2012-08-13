@@ -101,20 +101,22 @@ names[8] = 'John';
 var rowers = [];
 var row = null;
 
-for (var i=0; i <=4 ; i++) {
+for (var i=0; i <=6 ; i++) {
 	var CustomRow = require('ui/Coach/CustomRow');
-	row = new CustomRow(images[i],names[i],'M',22,75,195,5);
+	row = new CustomRow(images[i],names[i],'M',22,75,195,7);
 	rowers.push(row);
 }
 
+var heightRow = (1024/7);
+Titanium.API.info(heightRow);
+
 var rowerTableView = Titanium.UI.createTableView({
 	objName:'rowerTable',
+    data:rowers,
 	editable:'true',
-    contentWidth:'auto',
-    contentHeight:'auto',
-    size:Ti.UI.SIZE,
     touchEnabled:'true',
     separatorColor:'#000000',
+    height:Ti.UI.SIZE,
     top:60,
     width:400,
     left:0,
@@ -127,7 +129,6 @@ var rowerTableView = Titanium.UI.createTableView({
     showVerticalScrollIndicator:false,
     showHorizontalScrollIndicator:false,
     style:1,
-    data:rowers
 });
 win22.add(rowerTableView);
 
@@ -167,6 +168,13 @@ var ergView = Ti.UI.createView({
 	borderRadius:2,
 });
 win22.add(ergView);
+
+var wide = Titanium.Platform.displayCaps.platformWidth,
+	len =  Titanium.Platform.displayCaps.platformHeight;
+
+Ti.API.info(wide);
+Ti.API.info(len);
+
 return win22;
 };
 
