@@ -1,4 +1,4 @@
 TitaniumMobileApp
 =================
 
-iOS Mobile application using Titanium. Completely built in JavaScript
+iOS Mobile application using Titanium.
