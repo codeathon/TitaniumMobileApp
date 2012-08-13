@@ -1,5 +1,5 @@
 var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWeight, _rowerHeight, _rowerNumber) {
-	var heightRow = _rowerNumber
+	var heightRow = 1024/_rowerNumber;
 	
 	var self = Ti.UI.createTableViewRow({
 		objName:'listRowers',
@@ -7,7 +7,7 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 		hasDetail:'true',
 		moveable:'true',
 		left:0,
-		height:100
+		height:heightRow
 	});
 	
 	var rowerImageNamesexView = Ti.UI.createView({
@@ -78,7 +78,7 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 		font: {fontSize:20}
 	});
 	
-	var rowerWeight = Ti.UI.createLabel({
+	var rowerWeight = Ti.UI.createLabel({codeathon
 		text:'Weight: '+_rowerWeight,
 		font: {fontSize:20}
 	});
