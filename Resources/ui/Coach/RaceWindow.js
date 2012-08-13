@@ -35,55 +35,51 @@ var RaceWindow = function RaceWindow(title) {
 	images[7] = 'images/RedDog.gif';
 	images[8] = 'images/Woof.gif';
 	
+	var names = [];
+	names[0] = 'Rohit';
+	names[1] = 'Raghu';
+	names[2] = 'Andrew';
+	names[3] = 'Anshu';
+	names[4] = 'Vaishnav';
+	names[5] = 'Zahra';
+	names[6] = 'Fan';
+	names[7] = 'Bhavna';
+	names[8] = 'John';
+	
 	var rowers = [];
 	var row = null;
-
-	var rower1 = [{title:"Age:22"},
-			  	  {title:"Wt.: 90kgs."},
-			  	  {title:"Ht. 195 cms."}
-			  	 ];
-
-	for (var i=0; i <=7 ; i++) {
-		row = Ti.UI.createTableViewRow({
-			height:'auto'
-		});
-		row.add(Ti.UI.createImageView({
-			image:images[i],
-			left:0
-		}));
 	
-		row.add(Ti.UI.createTableView({left:120, rowHeight:34, borderColor:'#000000',borderRadius:5,backgroundColor:'#333333', footerTitle:'', scrollable:false, data:rower1}));
-		row.add(Ti.UI.createLabel({text:'Rower Name ' + i, left:0}));
+	for (var i=0; i <=4 ; i++) {
+		var CustomRow = require('ui/Coach/CustomRow');
+		row = new CustomRow(images[i],names[i],'M',22,75,195);
 		rowers.push(row);
 	}
-
-	/*
-	 * The List of rowers are inserted into this view
-	 */
-
+	
+	
 	var rowerTableView = Titanium.UI.createTableView({
-		style:Titanium.UI.iPhone.TableViewStyle.GROUPED,
-    	touchEnabled:'true',
-  	    separatorColor:'#000000',
+		objName:'rowerTableRace',
+		editable:'true',
+	    contentWidth:'auto',
+	    contentHeight:'auto',
+	    touchEnabled:'true',
+	    height:Ti.UI.SIZE,
+	    separatorColor:'#000000',
 	    top:60,
-    	height:Ti.UI.SIZE,
-    	maxRowHeight:150,
-    	rowHeight:'auto',
-    	width:300,
+	    width:400,
 	    left:0,
-	    backgroundColor:'#666666',
+	    backgroundColor:'#003366',
 	    borderColor:'#000000',
 	    shadowColor:'#000000',
 	    separatorStyle:1,
 	    shadowOffset:{x:0,y:1},
-	    borderRadius:5,
+	    borderRadius:2,
 	    showVerticalScrollIndicator:false,
 	    showHorizontalScrollIndicator:false,
-	    horizontalWrap:true,
-	    footerTitle:'',
+	    style:1,
 	    data:rowers
 	});
 	self.add(rowerTableView);
+
 	
 	/*
 	 * The view that displays the Race as it progresses

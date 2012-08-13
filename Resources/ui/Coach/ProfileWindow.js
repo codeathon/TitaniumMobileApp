@@ -101,9 +101,9 @@ names[8] = 'John';
 var rowers = [];
 var row = null;
 
-for (var i=0; i <=8 ; i++) {
+for (var i=0; i <=4 ; i++) {
 	var CustomRow = require('ui/Coach/CustomRow');
-	row = new CustomRow(images[i],names[i],'M',22,75,195);
+	row = new CustomRow(images[i],names[i],'M',22,75,195,5);
 	rowers.push(row);
 }
 
@@ -167,7 +167,6 @@ var ergView = Ti.UI.createView({
 	borderRadius:2,
 });
 win22.add(ergView);
-
 return win22;
 };
 
