@@ -55,7 +55,6 @@ var RaceWindow = function RaceWindow(title) {
 		rowers.push(row);
 	}
 	
-	
 	var rowerTableView = Titanium.UI.createTableView({
 		objName:'rowerTableRace',
 		editable:'true',

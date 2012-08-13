@@ -3,12 +3,12 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	self = Ti.UI.createTableViewRow({
 		objName:'listRowers',
 		touchEnabled:'true',
-		height:heightRow,
 		hasDetail:'true',
 		moveable:'true',
 		left:0,
 	});
 	Titanium.API.info('Height of a row '+self.height);
+	self.height = heightRow;
 	
 	var rowerImageNamesexView = Ti.UI.createView({
 		layout:'vertical',
