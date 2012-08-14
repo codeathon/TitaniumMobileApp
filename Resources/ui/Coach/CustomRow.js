@@ -1,20 +1,19 @@
 var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWeight, _rowerHeight, _rowerNumber) {
-	var heightRow = (964/7);
+	var heightRow = (964/(_rowerNumber+1));
 	self = Ti.UI.createTableViewRow({
 		objName:'listRowers',
 		touchEnabled:'true',
 		hasDetail:'true',
 		moveable:'true',
-		left:0,
+		left:0
 	});
-	Titanium.API.info('Height of a row '+self.height);
 	self.height = heightRow;
+	Titanium.API.info('Height of a row '+self.height);
 	
 	var rowerImageNamesexView = Ti.UI.createView({
 		layout:'vertical',
 		left:0,
 		width:'55%',
-		height:'100%',
 		backgroundColor:'blue'
 	});
 	self.add(rowerImageNamesexView);
@@ -23,7 +22,6 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 		layout:'vertical',
 		right:0,
 		width:'45%',
-		height:'auto',
 		backgroundColor:'cyan'
 	});
 	self.add(rowerInfoView);
@@ -31,30 +29,23 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	var nameSexView = Ti.UI.createView({
 		layout:'horizontal',
 		width:'auto',
-		height:'35%',
-		bottom:0,
 		backgroundColor:'orange'
 	});
 		
 	var rowerNameLabel = Ti.UI.createLabel({
 		text:_rowerName+',',
-		width:'auto',
 		left:0,
-		bottom:0,
-		font: {fontSize:20}
+		bottom:0
 	});
 	
 	var rowerSexLabel = Ti.UI.createLabel({
 		text:_rowerSex,
-		width:'auto',
 		right:0,
 		bottom:0
 	});
 			
 	var rowerAgeLabel = Ti.UI.createLabel({
 		text:'Age: '+_rowerAge+', ',
-		font: {fontSize:20},
-		width:'auto',
 		bottom:0	
 	});
 	
@@ -64,28 +55,22 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	
 	var rowerImage = Ti.UI.createImageView({
 		image:_rowerImage,
-		left:0,
-		top:3,
-		width:'40%',
-		height:'40%'
+		left:0
 	});
 
 	rowerImageNamesexView.add(rowerImage);
 	rowerImageNamesexView.add(nameSexView);
 
 	var rowerHeight = Ti.UI.createLabel({
-		text:'Height: '+_rowerHeight,
-		font: {fontSize:20}
+		text:'Height: '+_rowerHeight
 	});
 	
 	var rowerWeight = Ti.UI.createLabel({
-		text:'Weight: '+_rowerWeight,
-		font: {fontSize:20}
+		text:'Weight: '+_rowerWeight
 	});
 
 	var rowerSplit = Ti.UI.createLabel({
-		text:'Split: 25spm',
-		font:{fontSize:20}
+		text:'Split: 25spm'
 	});
 
 	rowerInfoView.add(rowerSplit);
