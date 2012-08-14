@@ -101,9 +101,9 @@ names[8] = 'John';
 var rowers = [];
 var row = null;
 
-for (var i=0; i <=4; i++) {
+for (var i=1; i <=images.length; i++) {
 	var CustomRow = require('ui/Coach/CustomRow');
-	row = new CustomRow(images[i],names[i],'M',22,75,195,5);
+	row = new CustomRow(images[i],names[i],'M',22,75,195,images.length);
 	Ti.API.info('Post Row height '+row.height);
 	rowers.push(row);
 }
@@ -116,7 +116,7 @@ var rowerTableView = Titanium.UI.createTableView({
     separatorColor:'#000000',
     height:964,
     top:60,
-    width:400,
+    width:300,
     left:0,
     maxRowHeight:964,
     backgroundColor:'#003366',
@@ -147,7 +147,7 @@ var setupSessionButton = Ti.UI.createButton({
 win22.add(setupSessionButton);
 
 setupSessionButton.addEventListener("click", function(e) {
-	Ti.API.info('Inside Setu session click');
+	Ti.API.info('Inside Setup session click');
 	var TabGroupRace = require('ui/Coach/TabGroupRace'),
 	theTabGroupRace = new TabGroupRace();
 	theTabGroupRace.open();

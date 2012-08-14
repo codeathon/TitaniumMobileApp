@@ -7,7 +7,7 @@ var RaceWindow = function RaceWindow(title) {
 	});
 	
 	var participantsLabel = Ti.UI.createLabel({
-		title:'Participants',
+		text:'Participants',
 		top:0,
 		left:30,
 		font:{fontSize:20},
@@ -49,9 +49,9 @@ var RaceWindow = function RaceWindow(title) {
 	var rowers = [];
 	var row = null;
 	
-	for (var i=0; i <=6 ; i++) {
+	for (var i=0; i<images.length ; i++) {
 		var CustomRow = require('ui/Coach/CustomRow');
-		row = new CustomRow(images[i],names[i],'M',22,75,195,7);
+		row = new CustomRow(images[i],names[i],'M',22,75,195,images.length);
 		rowers.push(row);
 	}
 	
@@ -64,11 +64,12 @@ var RaceWindow = function RaceWindow(title) {
 	    height:Ti.UI.SIZE,
 	    separatorColor:'#000000',
 	    top:60,
-	    width:400,
+	    width:250,
 	    left:0,
 	    backgroundColor:'#003366',
 	    borderColor:'#000000',
 	    shadowColor:'#000000',
+	    scrollable:false,
 	    separatorStyle:1,
 	    shadowOffset:{x:0,y:1},
 	    borderRadius:2,
@@ -78,19 +79,37 @@ var RaceWindow = function RaceWindow(title) {
 	    data:rowers
 	});
 	self.add(rowerTableView);
-
 	
 	/*
 	 * The view that displays the Race as it progresses
 	 */
-	var raceView = Titanium.UI.createView({
-		rowHeight:250,
-		top:100,
+	
+	var raceRowers = [];
+	var raceRow = null;
+	
+	for(var i=1; i<=images.length; i++) {
+		var CustomRaceRow = require('ui/Race/CustomRaceRow');
+		raceRow = new CustomRaceRow(images.length);
+		raceRowers.push(raceRow);	
+	}
+	
+	var raceView = Titanium.UI.createTableView({
+		height:Ti.UI.SIZE,
+		editable:false,
+	    contentWidth:'auto',
+	    contentHeight:'auto',
+	    touchEnabled:'true',
+	    separatorStyle:1,
+	    shadowOffset:{x:0,y:1},
+	    showVerticalScrollIndicator:false,
+	    showHorizontalScrollIndicator:false,
+		top:60,
 		right:0,
-		bottom:70,
-		width:450,
+		width:480,
 		borderColor:'#000000',
-		borderRadius:5,
+		borderRadius:2,
+		scrollable:false,
+		data:raceRowers
 	});
 	self.add(raceView);
 	
