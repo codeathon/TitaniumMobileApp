@@ -49,9 +49,9 @@ var RaceWindow = function RaceWindow(title) {
 	var rowers = [];
 	var row = null;
 	
-	for (var i=0; i <=4 ; i++) {
+	for (var i=0; i <=6 ; i++) {
 		var CustomRow = require('ui/Coach/CustomRow');
-		row = new CustomRow(images[i],names[i],'M',22,75,195);
+		row = new CustomRow(images[i],names[i],'M',22,75,195,7);
 		rowers.push(row);
 	}
 	

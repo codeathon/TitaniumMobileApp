@@ -9,18 +9,20 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	});
 	self.height = heightRow;
 	Titanium.API.info('Height of a row '+self.height);
-	
+
 	var rowerImageNamesexView = Ti.UI.createView({
 		layout:'vertical',
 		left:0,
 		width:'55%',
+		height:'auto',
 		backgroundColor:'blue'
 	});
 	self.add(rowerImageNamesexView);
-	
+
 	var rowerInfoView = Ti.UI.createView({
 		layout:'vertical',
 		right:0,
+		height:'auto',
 		width:'45%',
 		backgroundColor:'cyan'
 	});
@@ -62,15 +64,18 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	rowerImageNamesexView.add(nameSexView);
 
 	var rowerHeight = Ti.UI.createLabel({
-		text:'Height: '+_rowerHeight
+		text:'Height: '+_rowerHeight,
+		height:'auto'
 	});
 	
 	var rowerWeight = Ti.UI.createLabel({
-		text:'Weight: '+_rowerWeight
+		text:'Weight: '+_rowerWeight,
+		height:'auto'
 	});
 
 	var rowerSplit = Ti.UI.createLabel({
-		text:'Split: 25spm'
+		text:'Split: 25spm',
+		height:'auto'
 	});
 
 	rowerInfoView.add(rowerSplit);

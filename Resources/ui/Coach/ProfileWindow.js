@@ -101,9 +101,9 @@ names[8] = 'John';
 var rowers = [];
 var row = null;
 
-for (var i=0; i <=7 ; i++) {
+for (var i=0; i <=4; i++) {
 	var CustomRow = require('ui/Coach/CustomRow');
-	row = new CustomRow(images[i],names[i],'M',22,75,195,8);
+	row = new CustomRow(images[i],names[i],'M',22,75,195,5);
 	Ti.API.info('Post Row height '+row.height);
 	rowers.push(row);
 }
@@ -114,18 +114,18 @@ var rowerTableView = Titanium.UI.createTableView({
 	editable:'true',
     touchEnabled:'true',
     separatorColor:'#000000',
-    height:Ti.UI.SIZE,
-    maxRowHeight:Ti.UI.SIZE,
+    height:964,
     top:60,
     width:400,
     left:0,
+    maxRowHeight:964,
     backgroundColor:'#003366',
     borderColor:'#000000',
     shadowColor:'#000000',
     separatorStyle:1,
     scrollable:false,
     shadowOffset:{x:0,y:1},
-    borderRadius:2,
+    borderRadius:5,
     showVerticalScrollIndicator:false,
     showHorizontalScrollIndicator:false,
     style:1,
@@ -160,7 +160,7 @@ var ergs = [{title:'Erg 1'},
 var ergView = Ti.UI.createView({
 	rowHeight:250,
 	top:100,
-	right:80,
+	right:60,
 	bottom:70,
 	width:300,
 	borderColor:'#000000',
