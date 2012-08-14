@@ -99,7 +99,7 @@ var RaceWindow = function RaceWindow(title) {
 	    contentWidth:'auto',
 	    contentHeight:'auto',
 	    touchEnabled:'true',
-	    separatorStyle:1,
+	    separatorStyle:2,
 	    shadowOffset:{x:0,y:1},
 	    showVerticalScrollIndicator:false,
 	    showHorizontalScrollIndicator:false,

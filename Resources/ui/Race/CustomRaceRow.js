@@ -6,15 +6,15 @@ var CustomRaceRow = function CustomRaceRow(_rowerNumber) {
 	 * 2. Lane markers
 	 */
 	var self = Ti.UI.createTableViewRow({
-		backgroundColor:'blue',
+		backgroundImage:'images/water.jpeg',
 		borderRadius:4
 	});
 	self.height = heightRow;
 	
 	var boatImage = Ti.UI.createImageView({
-		image:'images/boat.png',
-		width:30,
-		height:30,
+		image:'images/rowerRace.gif',
+		width:40,
+		height:40,
 		left:0
 	});
 	self.add(boatImage);
