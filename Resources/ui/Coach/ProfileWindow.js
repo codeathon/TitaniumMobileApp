@@ -111,7 +111,6 @@ for (var i=0; i <images.length; i++) {
 var rowerTableView = Titanium.UI.createTableView({
 	objName:'rowerTable',
     data:rowers,
-	editable:'true',
     touchEnabled:'true',
     separatorColor:'#000000',
     height:964,
@@ -124,12 +123,37 @@ var rowerTableView = Titanium.UI.createTableView({
     shadowColor:'#000000',
     separatorStyle:1,
     scrollable:false,
+    opacity:2,
     shadowOffset:{x:0,y:1},
     borderRadius:5,
     showVerticalScrollIndicator:false,
     showHorizontalScrollIndicator:false
 });
 win22.add(rowerTableView);
+
+rowerTableView.addEventListener('click', function(e) {
+	// event data
+        var index = e.index;
+        var section = e.section;
+        var row = e.row;
+        var rowdata = e.rowData;
+        //row.hasCheck = true;
+        var check = true;
+ 
+        if(row.hasCheck == false) {
+            row.hasCheck = true;
+            Ti.API.info("checked");
+        }
+ 
+        else {
+            row.hasCheck = false;
+            Ti.API.info("unchecked");
+        }
+ 
+        Ti.API.info("click");
+        Ti.API.info(row.hasCheck);
+});
+
 
 var setupSessionButton = Ti.UI.createButton({
 	title:'Setup Session',

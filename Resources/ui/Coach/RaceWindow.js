@@ -22,6 +22,21 @@ var RaceWindow = function RaceWindow(title) {
 	});
 	self.add(startRace);
 	
+	var compareRowers = Ti.UI.createButton({
+		title:'Compare',
+		left:250,
+		top:0
+	});
+	self.add(compareRowers);
+	
+	compareRowers.addEventListener('click', function(e){
+		/*
+		 * Open the 'Compare' tab and display the Detail view for the rowers
+		 */
+		alert(rowCheckCount+' rows checked to compare');
+	});
+	
+	
 	var coachImage = Ti.UI.createImageView({
 		image:'images/ns.png',
 		top:0,
@@ -87,6 +102,32 @@ var RaceWindow = function RaceWindow(title) {
 	});
 	self.add(rowerTableView);
 	
+	var rowCheckCount = 0;
+	rowerTableView.addEventListener('click', function(e) {
+	// event data
+        var index = e.index;
+        var section = e.section;
+        var row = e.row;
+        var rowdata = e.rowData;
+        //row.hasCheck = true;
+        var check = true;
+ 
+        if(row.hasCheck === true) {
+        	rowCheckCount--;
+            row.hasCheck = false;
+            Ti.API.info("unchecked");
+        }
+ 
+        else {
+        	rowCheckCount++;
+            row.hasCheck = true;
+            Ti.API.info("checked");
+        }
+ 
+        Ti.API.info("click");
+        Ti.API.info(row.hasCheck);
+});
+	
 	/*
 	 * The view that displays the Race as it progresses
 	 */
@@ -104,8 +145,10 @@ var RaceWindow = function RaceWindow(title) {
 	}
 	
 	startRace.addEventListener("click", function(e) {
-		raceRowers.forEach(moveTo())
 	});
+	
+	
+	
 	
 	var raceView = Titanium.UI.createTableView({
 		height:Ti.UI.SIZE,

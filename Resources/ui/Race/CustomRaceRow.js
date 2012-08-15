@@ -7,12 +7,14 @@ var CustomRaceRow = function CustomRaceRow(_rowerNumber) {
 	 */
 	var self = Ti.UI.createTableViewRow({
 		backgroundImage:'images/water.jpeg',
+		touchEnabled:'true',
+		moveable:'true',
 		borderRadius:4
 	});
 	self.height = heightRow;
 	
 	var boatImage = Ti.UI.createImageView({
-		image:'images/rowerRace.gif',
+		image:'images/singleRow.png',
 		width:40,
 		height:40,
 		left:0

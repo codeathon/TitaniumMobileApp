@@ -5,7 +5,6 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	self = Ti.UI.createTableViewRow({
 		objName:'listRowers',
 		touchEnabled:'true',
-		hasDetail:'true',
 		moveable:'true',
 		left:0
 	});
