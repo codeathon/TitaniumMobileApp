@@ -15,6 +15,13 @@ var RaceWindow = function RaceWindow(title) {
 	});
 	self.add(participantsLabel);
 	
+	var startRace = Ti.UI.createButton({
+		title:'Start Race',
+		left:150,
+		top:0
+	});
+	self.add(startRace);
+	
 	var coachImage = Ti.UI.createImageView({
 		image:'images/ns.png',
 		top:0,
@@ -68,6 +75,7 @@ var RaceWindow = function RaceWindow(title) {
 	    left:0,
 	    backgroundColor:'#003366',
 	    borderColor:'#000000',
+	    borderWidth:2,
 	    shadowColor:'#000000',
 	    scrollable:false,
 	    separatorStyle:1,
@@ -90,8 +98,15 @@ var RaceWindow = function RaceWindow(title) {
 	for(var i=1; i<=images.length; i++) {
 		var CustomRaceRow = require('ui/Race/CustomRaceRow');
 		raceRow = new CustomRaceRow(images.length);
+		raceRow.addEventListener('click', function(e) {
+			
+		});
 		raceRowers.push(raceRow);	
 	}
+	
+	startRace.addEventListener("click", function(e) {
+		raceRowers.forEach(moveTo())
+	});
 	
 	var raceView = Titanium.UI.createTableView({
 		height:Ti.UI.SIZE,
@@ -99,7 +114,7 @@ var RaceWindow = function RaceWindow(title) {
 	    contentWidth:'auto',
 	    contentHeight:'auto',
 	    touchEnabled:'true',
-	    separatorStyle:2,
+	    separatorStyle:1,
 	    shadowOffset:{x:0,y:1},
 	    showVerticalScrollIndicator:false,
 	    showHorizontalScrollIndicator:false,
