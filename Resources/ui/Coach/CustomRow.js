@@ -1,5 +1,7 @@
 var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWeight, _rowerHeight, _rowerNumber) {
 	var heightRow = (964/(_rowerNumber+1));
+	var rowerNameToUpper = _rowerName.toUpperCase();
+	
 	self = Ti.UI.createTableViewRow({
 		objName:'listRowers',
 		touchEnabled:'true',
@@ -11,11 +13,18 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	Titanium.API.info('Height of a row '+self.height);
 
 	var rowerImageNamesexView = Ti.UI.createView({
-		layout:'vertical',
+		layout:'horizontal',
 		left:0,
 		width:'55%',
 		height:'auto',
-		backgroundColor:'blue'
+	    backgroundGradient:{
+			type:'linear',
+			colors:[
+			{color:'#d4d4d4',position:0.0},
+			{color:'#c4c4c4',position:0.50},
+			{color:'#a4a4a4',position:1.0}
+			]
+		}
 	});
 	self.add(rowerImageNamesexView);
 
@@ -24,31 +33,46 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 		right:0,
 		height:'auto',
 		width:'45%',
-		backgroundColor:'cyan'
+	    backgroundGradient:{
+			type:'linear',
+			colors:[
+			{color:'#d4d4d4',position:0.0},
+			{color:'#c4c4c4',position:0.50},
+			{color:'#a4a4a4',position:1.0}
+			]
+		},
 	});
 	self.add(rowerInfoView);
 
 	var nameSexView = Ti.UI.createView({
-		layout:'horizontal',
-		width:'auto',
-		backgroundColor:'orange'
+		left:10,
+		top:10,
+		layout:'vertical',
+		width:'auto'
 	});
 		
 	var rowerNameLabel = Ti.UI.createLabel({
-		text:_rowerName+',',
+		text:rowerNameToUpper+',',
+		color:'#ffffff',
+		font:{fontSize:16,fontStyle:'bold'},
 		left:0,
 		bottom:0
 	});
 	
 	var rowerSexLabel = Ti.UI.createLabel({
-		text:_rowerSex,
-		right:0,
+		font:{fontSize:12},
+		color:'#ffffff',
+		text:_rowerSex.toUpperCase(),
+		left:0,
 		bottom:0
 	});
 			
 	var rowerAgeLabel = Ti.UI.createLabel({
-		text:'Age: '+_rowerAge+', ',
-		bottom:0	
+		font:{fontSize:12},
+		color:'#ffffff',
+		text:_rowerAge+', ',
+		bottom:0,
+		left:0
 	});
 	
 	nameSexView.add(rowerNameLabel);
@@ -57,6 +81,9 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 	
 	var rowerImage = Ti.UI.createImageView({
 		image:_rowerImage,
+		width:'30%',
+		height:'100%',
+		top:0,
 		left:0
 	});
 
@@ -84,5 +111,5 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 
 	return self;
 };
-
+module.exports = CustomRow;
 module.exports = CustomRow;

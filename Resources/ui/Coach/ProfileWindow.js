@@ -7,7 +7,7 @@ var ProfileWindow = function ProfileWindow(title) {
 var win22 = Titanium.UI.createWindow({
 	layout:'absolute',
 	title:title,
-	backgroundColor:'#ffffff'
+	backgroundColor:'#c4c4c4'
 });
 
 var athleteLabel = Ti.UI.createLabel({
@@ -77,33 +77,33 @@ addAthleteButton.addEventListener("click", function(e) {
 });
 
 var images = [];
-images[0] = 'images/Bluehound.gif';
-images[1] = 'images/Doggie.gif'; 
-images[2] = 'images/Pointy.gif';
-images[3] = 'images/Orange.gif';
-images[4] = 'images/Pear.gif';
-images[5] = 'images/Strawberry.gif';
-images[6] = 'images/PurpGuy.gif';
-images[7] = 'images/RedDog.gif';
-images[8] = 'images/Woof.gif';
+images[0] = 'images/profile1.gif';
+images[1] = 'images/profile2.jpeg'; 
+images[2] = 'images/profile3.jpeg';
+images[6] = 'images/profile4.jpeg';
+images[4] = 'images/profile5.jpeg';
+images[5] = 'images/profile6.jpeg';
+images[3] = 'images/profile7.jpeg';
+images[7] = 'images/profile8.jpeg';
+images[8] = 'images/profile9.jpeg';
 
 var names = [];
-names[0] = 'Rohit';
-names[1] = 'Raghu';
-names[2] = 'Andrew';
-names[3] = 'Anshu';
-names[4] = 'Vaishnav';
-names[5] = 'Zahra';
-names[6] = 'Fan';
-names[7] = 'Bhavna';
-names[8] = 'John';
+names[0] = 'Rohit Ainapure';
+names[1] = 'Raghu Prabhakar';
+names[2] = 'Andrew Jenkins';
+names[3] = 'Anshu Prabhat';
+names[4] = 'Vaishnav Desai';
+names[5] = 'Zahra Nazari';
+names[6] = 'Fan Yang';
+names[7] = 'Jack Sparrow';
+names[8] = 'John Pavan';
 
 var rowers = [];
 var row = null;
 
-for (var i=1; i <=images.length; i++) {
+for (var i=0; i <images.length; i++) {
 	var CustomRow = require('ui/Coach/CustomRow');
-	row = new CustomRow(images[i],names[i],'M',22,75,195,images.length);
+	row = new CustomRow(images[i],names[i],'m',22,75,195,images.length);
 	Ti.API.info('Post Row height '+row.height);
 	rowers.push(row);
 }
@@ -116,7 +116,7 @@ var rowerTableView = Titanium.UI.createTableView({
     separatorColor:'#000000',
     height:964,
     top:60,
-    width:300,
+    width:'50%',
     left:0,
     maxRowHeight:964,
     backgroundColor:'#003366',
@@ -127,8 +127,7 @@ var rowerTableView = Titanium.UI.createTableView({
     shadowOffset:{x:0,y:1},
     borderRadius:5,
     showVerticalScrollIndicator:false,
-    showHorizontalScrollIndicator:false,
-    style:1,
+    showHorizontalScrollIndicator:false
 });
 win22.add(rowerTableView);
 
@@ -159,10 +158,10 @@ var ergs = [{title:'Erg 1'},
   			
 var ergView = Ti.UI.createView({
 	rowHeight:250,
-	top:100,
-	right:60,
+	top:60,
 	bottom:70,
-	width:300,
+	right:0,
+	width:'50%',
 	borderColor:'#000000',
 	backgroundColor:'#3300CC',
 	borderRadius:2,

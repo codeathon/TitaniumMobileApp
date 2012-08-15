@@ -3,7 +3,7 @@ var RaceWindow = function RaceWindow(title) {
 	Ti.API.info('inside Race Window');
 	var self = Ti.UI.createWindow({
 		title:title,
-		backgroundColor:'#ffffff'
+		backgroundColor:'#c4c4c4'
 	});
 	
 	var participantsLabel = Ti.UI.createLabel({
@@ -32,26 +32,26 @@ var RaceWindow = function RaceWindow(title) {
 	self.add(coachImage);
 
 	var images = [];
-	images[0] = 'images/Bluehound.gif';
-	images[1] = 'images/Doggie.gif'; 
-	images[2] = 'images/Pointy.gif';
-	images[3] = 'images/Orange.gif';
-	images[4] = 'images/Pear.gif';
-	images[5] = 'images/Strawberry.gif';
-	images[6] = 'images/PurpGuy.gif';
-	images[7] = 'images/RedDog.gif';
-	images[8] = 'images/Woof.gif';
+	images[0] = 'images/profile1.gif';
+	images[1] = 'images/profile2.jpeg'; 
+	images[2] = 'images/profile3.jpeg';
+	images[6] = 'images/profile4.jpeg';
+	images[4] = 'images/profile5.jpeg';
+	images[5] = 'images/profile6.jpeg';
+	images[3] = 'images/profile7.jpeg';
+	images[7] = 'images/profile8.jpeg';
+	images[8] = 'images/profile9.jpeg';
 	
 	var names = [];
-	names[0] = 'Rohit';
-	names[1] = 'Raghu';
-	names[2] = 'Andrew';
-	names[3] = 'Anshu';
-	names[4] = 'Vaishnav';
-	names[5] = 'Zahra';
-	names[6] = 'Fan';
-	names[7] = 'Bhavna';
-	names[8] = 'John';
+	names[0] = 'Rohit Ainapure';
+	names[1] = 'Raghu Prabhakar';
+	names[2] = 'Andrew Jenkins';
+	names[3] = 'Anshu Prabhat';
+	names[4] = 'Vaishnav Desai';
+	names[5] = 'Zahra Nazari';
+	names[6] = 'Fan Yang';
+	names[7] = 'Jack Sparrow';
+	names[8] = 'John Pavan';
 	
 	var rowers = [];
 	var row = null;
@@ -69,21 +69,20 @@ var RaceWindow = function RaceWindow(title) {
 	    contentHeight:'auto',
 	    touchEnabled:'true',
 	    height:Ti.UI.SIZE,
+		width:'50%',
 	    separatorColor:'#000000',
 	    top:60,
-	    width:250,
 	    left:0,
 	    backgroundColor:'#003366',
 	    borderColor:'#000000',
 	    borderWidth:2,
 	    shadowColor:'#000000',
-	    scrollable:false,
+	    scrollable:true,
 	    separatorStyle:1,
 	    shadowOffset:{x:0,y:1},
 	    borderRadius:2,
 	    showVerticalScrollIndicator:false,
 	    showHorizontalScrollIndicator:false,
-	    style:1,
 	    data:rowers
 	});
 	self.add(rowerTableView);
@@ -120,7 +119,7 @@ var RaceWindow = function RaceWindow(title) {
 	    showHorizontalScrollIndicator:false,
 		top:60,
 		right:0,
-		width:480,
+		width:'50%',
 		borderColor:'#000000',
 		borderRadius:2,
 		scrollable:false,
