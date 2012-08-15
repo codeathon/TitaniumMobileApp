@@ -29,13 +29,25 @@ var RaceWindow = function RaceWindow(title) {
 	});
 	self.add(compareRowers);
 	
+	var rowCheckedForCompare = [];
+	
 	compareRowers.addEventListener('click', function(e){
 		/*
 		 * Open the 'Compare' tab and display the Detail view for the rowers
 		 */
-		alert(rowCheckCount+' rows checked to compare');
+		var dataRows = rowerTableView.data[0].rows;
+		
+		for(var count = 0; count < rowerTableView.data[0].rowCount; count++) {
+		Ti.API.info(dataRows[count]);
+			if(dataRows[count].isSelected == true) {
+				rowCheckedForCompare.push(dataRows[count]);
+			}	
+		}
+		Ti.API.info(rowCheckedForCompare);
+		var TabCompare = require('ui/Coach/TabCompare'),
+		theTabCompare = new TabCompare(rowCheckedForCompare);
+		theTabCompare.open();
 	});
-	
 	
 	var coachImage = Ti.UI.createImageView({
 		image:'images/ns.png',
@@ -146,9 +158,6 @@ var RaceWindow = function RaceWindow(title) {
 	
 	startRace.addEventListener("click", function(e) {
 	});
-	
-	
-	
 	
 	var raceView = Titanium.UI.createTableView({
 		height:Ti.UI.SIZE,

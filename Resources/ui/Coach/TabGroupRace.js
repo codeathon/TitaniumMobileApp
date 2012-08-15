@@ -10,7 +10,10 @@ var TabGroupRace = function TabGroupRace() {
 		window:raceWin
 	});
 	raceWin.containingTab = raceTab;
+	
+	
 	self.addTab(raceTab);
+
 	self.setActiveTab(0);
 	return self;
 };
