@@ -6,32 +6,42 @@ var CompareWindow = function CompareWindow(_rowerArray,_title) {
 		layout:'horizontal'
 	});
 
-	var rowerCompareTableView = Ti.UI.createTableView({
-		backgroundColor:'blue',
-		height:'80%',
-		width:'30%',
-		left:0,
+	var rowerDetailRowerView = Ti.UI.createView({
+		layout:'vertical',
 		top:0,
-		data:_rowerArray
+		width:'100%',
+		height:'70%'
 	});
-	self.add(rowerCompareTableView);
+	self.add(rowerDetailRowerView);
 
-	var rowerCompareDetailTableView = Ti.UI.createTableView({
-		backgroundColor:'cyan',
-		height:'80%',
-		width:'70%',
-		top:0,
-		data:_rowerArray
-	});
-	self.add(rowerCompareDetailTableView);
-	
 	var raceView = Ti.UI.createTableView({
 		backgroundColor:'orange',
-		height:'auto',
+		height:'30%',
 		width:'auto',
 		bottom:0
 	});
 	self.add(raceView);
+
+	var rowerCompareTableView = Ti.UI.createTableView({
+		backgroundColor:'blue',
+		height:'80%',
+		width:'40%',
+		left:0,
+		top:0,
+		data:_rowerArray
+	});
+	rowerDetailRowerView.add(rowerCompareTableView);
+
+	var rowerCompareDetailTableView = Ti.UI.createTableView({
+		backgroundColor:'cyan',
+		height:'80%',
+		width:'60%',
+		top:0,
+		right:0
+	});
+	rowerDetailRowerView.add(rowerCompareDetailTableView);
+	
+
 	
 	return self;	
 };

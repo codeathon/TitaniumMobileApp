@@ -38,10 +38,10 @@ var RaceWindow = function RaceWindow(title) {
 		var dataRows = rowerTableView.data[0].rows;
 		
 		for(var count = 0; count < rowerTableView.data[0].rowCount; count++) {
-		Ti.API.info(dataRows[count]);
-			if(dataRows[count].isSelected == true) {
+			Ti.API.info(dataRows[count]);
+			if(dataRows[count].hasCheck == true){
 				rowCheckedForCompare.push(dataRows[count]);
-			}	
+			}
 		}
 		Ti.API.info(rowCheckedForCompare);
 		var TabCompare = require('ui/Coach/TabCompare'),
