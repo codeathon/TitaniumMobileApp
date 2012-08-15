@@ -3,7 +3,7 @@ var RaceWindow = function RaceWindow(title) {
 	Ti.API.info('inside Race Window');
 	var self = Ti.UI.createWindow({
 		title:title,
-		backgroundColor:'#c4c4c4'
+		backgroundColor:'#aaaaaa'
 	});
 	
 	var participantsLabel = Ti.UI.createLabel({

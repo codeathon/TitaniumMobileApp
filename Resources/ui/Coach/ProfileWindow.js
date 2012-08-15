@@ -7,7 +7,7 @@ var ProfileWindow = function ProfileWindow(title) {
 var win22 = Titanium.UI.createWindow({
 	layout:'absolute',
 	title:title,
-	backgroundColor:'#c4c4c4'
+	backgroundColor:'#aaaaaa'
 });
 
 var athleteLabel = Ti.UI.createLabel({
