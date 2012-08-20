@@ -13,7 +13,7 @@ var TabGroupCoach = function TabGroupCoach() {
 		
 	var profileTab = Ti.UI.createTab({
 		title:L('Profile'),
-		icon:'',
+		icon:'images/user.png',
 		window:profileWin
 	});
 	profileWin.containingTab = profileTab;
@@ -21,7 +21,7 @@ var TabGroupCoach = function TabGroupCoach() {
 	
 	var historyTab = Ti.UI.createTab({
 		title:L('History'),
-		icon:'',
+		icon:'images/history3.png',
 		window:historyWin
 	});
 	historyWin.containingTab = historyTab;
@@ -29,7 +29,7 @@ var TabGroupCoach = function TabGroupCoach() {
 
 	var settingsTab = Ti.UI.createTab({
 		title:L('Settings'),
-		icon:'',
+		icon:'images/24_settings.png',
 		window:settingsWin
 	});
 	settingsWin.containingTab = settingsTab;

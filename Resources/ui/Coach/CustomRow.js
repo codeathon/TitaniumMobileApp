@@ -8,7 +8,7 @@ var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWe
 		moveable:'true',
 		left:0
 	});
-	self.height = heightRow;
+	self.height = 96.4;
 	Titanium.API.info('Height of a row '+self.height);
 
 	var rowerImageNamesexView = Ti.UI.createView({

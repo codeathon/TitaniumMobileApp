@@ -7,12 +7,11 @@ var TabCompare = function TabCompare(_rowerArray) {
 	
 	var compareTab = Ti.UI.createTab({
 		title:'Compare',
+		icon:'images/group_star.png',
 		window:compareWin
 	});
-	compareWin.containingTab = compareTab;
-	
+	compareWin.containingTab = compareTab; 
 	self.addTab(compareTab);
-
 	self.setActiveTab(0);
 	return self;
 };

@@ -129,7 +129,7 @@ var rowerTableView = Titanium.UI.createTableView({
     borderColor:'#000000',
     shadowColor:'#000000',
     separatorStyle:1,
-    scrollable:false,
+    scrollable:true,
     opacity:2,
     shadowOffset:{x:0,y:1},
     borderRadius:5,

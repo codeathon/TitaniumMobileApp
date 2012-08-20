@@ -12,7 +12,7 @@ var TabGroupLogin = function TabGroupLogin() {
 	
 	var loginTab = Ti.UI.createTab({
 		title:L('Login'),
-		icon:'/images/log_in.png',
+		icon:'/images/login.png',
 		window:loginWin
 	});
 	loginWin.containingTab = loginTab;
@@ -20,7 +20,7 @@ var TabGroupLogin = function TabGroupLogin() {
 	
 	var accountTab = Ti.UI.createTab({
 		title:L('Account'),
-		icon:'images/list_add.png',
+		icon:'images/user_male_white_orange.png',
 		window:accountWin
 	});
 	accountWin.containingTab = accountTab;
