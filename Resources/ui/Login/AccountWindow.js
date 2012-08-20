@@ -84,6 +84,11 @@ var createBtn = Titanium.UI.createButton({
 });
 view.add(createBtn);
 
+var webViewTemp = Ti.UI.createWebView({
+	url:'http://www.google.co.in'
+})
+view.add(webViewTemp);
+
 return self;
 
 };

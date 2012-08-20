@@ -23,7 +23,7 @@ var loginView = Ti.UI.createView({
 			{color:'#ffff66',position:0.66}
 			]
 		},
-	backgroundImage:'images/ol.png',
+	backgroundImage:'images/oarlokLogo.png',
 	opacity:0.9,
 	width:400,
 	height:250,
@@ -68,7 +68,7 @@ var username = Titanium.UI.createTextField({
 	opacity:1.0,
 	width:'100%',
 	height:'100%',
-	hintText:'OarLok UserID',
+	hintText:'OARLOK UserID',
 	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
 	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
