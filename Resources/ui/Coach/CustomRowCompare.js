@@ -1,7 +1,7 @@
-var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWeight, _rowerHeight, _rowerNumber) {
+var CustomRowCompare = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWeight, _rowerHeight, _rowerNumber) {
 	var heightRow = (964/(_rowerNumber+1));
 	var rowerNameToUpper = _rowerName.toUpperCase();
-	Ti.API.info('number of rowers:'+_rowerNumber);
+	
 	self = Ti.UI.createTableViewRow({
 		objName:'listRowers',
 		touchEnabled:'true',

@@ -30,6 +30,9 @@ var CompareWindow = function CompareWindow(_rowerArray,_title) {
 		top:0,
 		data:_rowerArray
 	});
+	compareHeight = (rowerCompareTableView.height)/(_rowerArray.length);
+	rowerCompareTableView.rowHeight = compareHeight;
+	Ti.API.info('rowerCompareTableView row height:'+ compareHeight);
 	rowerDetailRowerView.add(rowerCompareTableView);
 
 	var rowerCompareDetailTableView = Ti.UI.createTableView({
@@ -41,7 +44,6 @@ var CompareWindow = function CompareWindow(_rowerArray,_title) {
 	});
 	rowerDetailRowerView.add(rowerCompareDetailTableView);
 	
-
 	
 	return self;	
 };
