@@ -107,6 +107,12 @@ names[8] = 'John Pavan';
 
 var rowers = [];
 var row = null;
+/*
+ * Load this array on rowerTableView onclick event.
+ * pull the row index and populate the array with appropriate values.
+ */ 
+
+var rowerDetailArray = [];
 
 for (var i=0; i <images.length; i++) {
 	var CustomRow = require('ui/Coach/CustomRow');
@@ -123,9 +129,9 @@ var rowerTableView = Titanium.UI.createTableView({
     height:964,
     top:60,
     width:'50%',
+    backgroundColor:'#a4a4a4',
     left:0,
     maxRowHeight:964,
-    backgroundColor:'#003366',
     borderColor:'#000000',
     shadowColor:'#000000',
     separatorStyle:1,
@@ -133,32 +139,19 @@ var rowerTableView = Titanium.UI.createTableView({
     opacity:2,
     shadowOffset:{x:0,y:1},
     borderRadius:5,
+    
     showVerticalScrollIndicator:false,
     showHorizontalScrollIndicator:false
 });
 win22.add(rowerTableView);
 
 rowerTableView.addEventListener('click', function(e) {
-	// event data
-        var index = e.index;
-        var section = e.section;
-        var row = e.row;
-        var rowdata = e.rowData;
-        //row.hasCheck = true;
-        var check = true;
- 
-        if(row.hasCheck == false) {
-            row.hasCheck = true;
-            Ti.API.info("checked");
-        }
- 
-        else {
-            row.hasCheck = false;
-            Ti.API.info("unchecked");
-        }
- 
-        Ti.API.info("click");
-        Ti.API.info(row.hasCheck);
+	/*
+	 * populate the rowerDetailArray with the appropriate 
+	 * values based on the index of the row clicked.
+	 * 
+	 */
+
 });
 
 
@@ -182,13 +175,10 @@ setupSessionButton.addEventListener("click", function(e) {
 	theTabGroupRace = new TabGroupRace();
 	theTabGroupRace.open();
 });
-
-var ergs = [{title:'Erg 1'},
-  			{title:'Erg 2'},
-  			{title:'Erg 3'}];
-  			
-var ergView = Ti.UI.createView({
-	rowHeight:250,
+		
+var rowerDetailView = Ti.UI.createView({
+	rowHeight:200,
+	layout:'horizontal',
 	top:60,
 	bottom:70,
 	right:0,
@@ -197,7 +187,99 @@ var ergView = Ti.UI.createView({
 	backgroundColor:'#3300CC',
 	borderRadius:2,
 });
-win22.add(ergView);
+win22.add(rowerDetailView);
+
+var timeSMView = Ti.UI.createView({
+	layout:'horizontal',
+	height:'33.3%',
+	width:'auto'
+});
+rowerDetailView.add(timeSMView);
+
+var timeView = Ti.UI.createView({
+	left:0,
+	width:'75%',
+	height:'auto',
+	backgroundColor:'black',
+});
+timeSMView.add(timeView);
+
+		// Create a Label.
+var Time = Ti.UI.createLabel({
+		text : 'Time',
+		color : '#ffffff',
+		font : {fontSize:20},
+		height : 'auto',
+		width : 'auto',
+		textAlign : 'center'
+});
+	
+// Add to the parent view.
+timeView.add(Time);
+
+var smView = Ti.UI.createView({
+	width:'25%',
+	height:'auto',
+	backgroundColor:'orange'
+});
+timeSMView.add(smView);
+
+	
+// Create a Label.
+var SplitMinute = Ti.UI.createLabel({
+		text : 'Split/min',
+		color : '#ffffff',
+		font : {fontSize:12},
+		height : 'auto',
+		width : 'auto',
+		textAlign : 'center'
+});
+	
+// Add to the parent view.
+smView.add(SplitMinute);
+
+var wattView = Ti.UI.createView({
+	height:'33.3%',
+	width:'auto',
+	backgroundColor:'red'
+});
+rowerDetailView.add(wattView);
+
+
+// Create a Label.
+var wattViewLabel = Ti.UI.createLabel({
+		text : 'Watts',
+		color : '#ffffff',
+		font : {fontSize:20},
+		height : 'auto',
+		width : 'auto',
+		textAlign : 'center'
+});
+	
+// Add to the parent view.
+wattView.add(wattViewLabel);
+
+var averageWattView = Ti.UI.createView({
+	height:'33.3%',
+	width:'auto',
+	backgroundColor:'purple'
+});
+rowerDetailView.add(averageWattView);
+
+	// Create a Label.
+	var averageWattViewLabel = Ti.UI.createLabel({
+		text : 'Avg Watt',
+		color : '#ffffff',
+		font : {fontSize:20},
+		height : 'auto',
+		width : 'auto',
+		textAlign : 'center'
+	});
+	
+	// Add to the parent view.
+	averageWattView.add(averageWattViewLabel);
+	
+
 
 var wide = Titanium.Platform.displayCaps.platformWidth,
 	len =  Titanium.Platform.displayCaps.platformHeight;
