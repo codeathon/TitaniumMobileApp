@@ -90,7 +90,11 @@ PasswordView.add(password);
 
 loginBtn.addEventListener('click',function(e)
 {
-	connectToServer(username.value,password.value);
+	//connectToServer(username.value,password.value);
+	
+	var TabGroupCoach = require('ui/Coach/TabGroupCoach'),
+	theTabGroupCoach = new TabGroupCoach();
+	theTabGroupCoach.open();
 });
 	
 	

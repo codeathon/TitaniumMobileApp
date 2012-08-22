@@ -45,7 +45,7 @@ var RaceWindow = function RaceWindow(title) {
 		}
 		Ti.API.info(rowCheckedForCompare);
 		var TabCompare = require('ui/Coach/TabCompare'),
-		theTabCompare = new TabCompare(rowCheckedForCompare);
+		theTabCompare = new TabCompare(rowCheckedForCompare, raceView);
 		theTabCompare.open();
 	});
 	
