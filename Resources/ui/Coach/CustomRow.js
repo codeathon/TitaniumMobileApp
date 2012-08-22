@@ -1,4 +1,7 @@
 var CustomRow = function(_rowerImage, _rowerName, _rowerSex, _rowerAge, _rowerWeight, _rowerHeight, _rowerNumber) {
+	var width = Titanium.Platform.displayCaps.platformWidth,
+		height = Titanium.Platform.displayCaps.platformHeight;
+	
 	var heightRow = (964/(_rowerNumber+1));
 	var rowerNameToUpper = _rowerName.toUpperCase();
 	Ti.API.info('number of rowers:'+_rowerNumber);

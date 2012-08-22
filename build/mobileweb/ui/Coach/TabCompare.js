@@ -1,9 +1,9 @@
-var TabCompare = function TabCompare(_rowerArray) {
+var TabCompare = function TabCompare(_rowerArray,_raceView) {
 	Ti.API.info('in Tab Group Race');
 	var self = Ti.UI.createTabGroup(),
 		CompareWindow = require('ui/coach/compareWindow');
 
-	var compareWin = new CompareWindow(_rowerArray,'Compare Rowers');
+	var compareWin = new CompareWindow(_rowerArray,'Compare Rowers',_raceView);
 	
 	var compareTab = Ti.UI.createTab({
 		title:'Compare',

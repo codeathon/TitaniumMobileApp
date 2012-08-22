@@ -22,6 +22,8 @@ var RaceWindow = function RaceWindow(title) {
 	});
 	self.add(startRace);
 	
+	
+	
 	var compareRowers = Ti.UI.createButton({
 		title:'Compare',
 		left:250,
@@ -150,9 +152,6 @@ var RaceWindow = function RaceWindow(title) {
 	for(var i=1; i<=images.length; i++) {
 		var CustomRaceRow = require('ui/Race/CustomRaceRow');
 		raceRow = new CustomRaceRow(images.length);
-		raceRow.addEventListener('click', function(e) {
-			
-		});
 		raceRowers.push(raceRow);	
 	}
 	
@@ -178,6 +177,11 @@ var RaceWindow = function RaceWindow(title) {
 		data:raceRowers
 	});
 	self.add(raceView);
+	
+	
+	startRace.addEventListener('click', function(e){
+		Ti.API.fireEvent('race');
+	});
 	
 	return self;
 	};

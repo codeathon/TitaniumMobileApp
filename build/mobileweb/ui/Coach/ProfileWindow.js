@@ -107,6 +107,12 @@ names[8] = 'John Pavan';
 
 var rowers = [];
 var row = null;
+/*
+ * Load this array on rowerTableView onclick event.
+ * pull the row index and populate the array with appropriate values.
+ */ 
+
+var rowerDetailArray = [];
 
 for (var i=0; i <images.length; i++) {
 	var CustomRow = require('ui/Coach/CustomRow');
@@ -140,26 +146,12 @@ var rowerTableView = Titanium.UI.createTableView({
 win22.add(rowerTableView);
 
 rowerTableView.addEventListener('click', function(e) {
-	// event data
-        var index = e.index;
-        var section = e.section;
-        var row = e.row;
-        var rowdata = e.rowData;
-        //row.hasCheck = true;
-        var check = true;
- 
-        if(row.hasCheck == false) {
-            row.hasCheck = true;
-            Ti.API.info("checked");
-        }
- 
-        else {
-            row.hasCheck = false;
-            Ti.API.info("unchecked");
-        }
- 
-        Ti.API.info("click");
-        Ti.API.info(row.hasCheck);
+	/*
+	 * populate the rowerDetailArray with the appropriate 
+	 * values based on the index of the row clicked.
+	 * 
+	 */
+
 });
 
 

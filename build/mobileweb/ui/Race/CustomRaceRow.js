@@ -1,5 +1,8 @@
 var CustomRaceRow = function CustomRaceRow(_rowerNumber) {
 	var heightRow = (964/(_rowerNumber+1));
+	
+	var randomValue = randomMaxnMin(20000,25000);
+	Ti.API.info('Random Value:'+ randomValue);
 	/*
 	 * Returns a row for a race - basically returns a race lane
 	 * 1. Boat Image
@@ -21,7 +24,22 @@ var CustomRaceRow = function CustomRaceRow(_rowerNumber) {
 	});
 	self.add(boatImage);
 	
+	Ti.API.addEventListener('race', function(e) {
+		var t = Titanium.UI.iOS.create3DMatrix();
+		t = t.translate(380,0,0);
+		t.m34 = 1.0/-2000;
+		boatImage.animate({transform:t, duration:randomValue, autoreverse:false});
+	});
+
+	
 	return self;
 };
+
+function randomMaxnMin(min,max) {
+	var now = new Date();
+	var seed = now.getSeconds();
+	var randomValue = min + (Math.random(seed)*(max-min));
+	return Math.round(randomValue);
+}
 
 module.exports = CustomRaceRow;

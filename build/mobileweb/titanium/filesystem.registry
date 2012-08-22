@@ -1,4 +1,4 @@
-ts	1345572214000
+ts	1345657374000
 DragAndDrop.js	6518
 KS_nav_ui.png	1158
 KS_nav_views.png	1074
@@ -388,21 +388,21 @@ titanium.js	501675
 ui
 	Coach
 		Coach.js	954
-		CompareWindow.js	1097
+		CompareWindow.js	978
 		CustomRow.js	2346
 		CustomRowCompare.js	2288
 		HistoryWindow.js	164
-		ProfileWindow.js	6079
-		RaceWindow.js	4264
+		ProfileWindow.js	5883
+		RaceWindow.js	4305
 		SettingsWindow.js	166
-		TabCompare.js	493
+		TabCompare.js	513
 		TabGroupCoach.js	1065
 		TabGroupRace.js	410
 	Login
 		AccountWindow.js	2022
-		LoginWindow.js	2211
+		LoginWindow.js	3676
 		TabGroupLogin.js	812
 	Race
-		CustomRaceRow.js	563
+		CustomRaceRow.js	1060
 	Rower
 		RowerInfo.js	194
