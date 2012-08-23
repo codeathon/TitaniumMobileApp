@@ -2,13 +2,29 @@ var AccountWindow = function AccountWindow(title) {
 
 var self = Titanium.UI.createWindow({
 	layout:'absolute',
-	title:title
+	title:title,
+	backgroundImage:'images/collageRow.png'
 });
 /*
 * Interface
 */
 var view = Titanium.UI.createView({
     top:300,
+    width:400,
+    height:300,
+    backgroundGradient:{
+			type:'linear',
+			colors:[
+			{color:'#cccccc',position:0.0},
+			{color:'#ff0000',position:0.33},
+			{color:'#cc0000',position:0.66}
+			]
+	},
+	backgroundImage:'images/oarlokLogo.png',
+	opacity:0.9,
+	borderRadius:5,
+	borderColor:'#000000',
+	borderWidth:3,
 });
 self.add(view);
 
@@ -83,11 +99,6 @@ var createBtn = Titanium.UI.createButton({
 	font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
 });
 view.add(createBtn);
-
-var webViewTemp = Ti.UI.createWebView({
-	url:'http://www.google.co.in'
-})
-view.add(webViewTemp);
 
 return self;
 

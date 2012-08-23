@@ -19,8 +19,8 @@ var loginView = Ti.UI.createView({
 			type:'linear',
 			colors:[
 			{color:'#cccccc',position:0.0},
-			{color:'#ffcc66',position:0.33},
-			{color:'#ffff66',position:0.66}
+			{color:'#ff0000',position:0.33},
+			{color:'#cc0000',position:0.66}
 			]
 		},
 	backgroundImage:'images/oarlokLogo.png',
